@@ -1,4 +1,8 @@
 /* navbar */
+nav {
+    float: left;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -27,12 +31,46 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    background-color:#555;
+    color: white;
 }
 
+/* header */
 header {
+    background-color:#555;
+    color: white;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     text-align: center;
+}
+
+/* listas */
+table,
+th,
+td {
+    border: 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 7px;
+    text-align: left;
+}
+
+/* form */
+form{
+    
+    text-align:center;
+}
+input {
+    background-color:#555;
+    color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
 }

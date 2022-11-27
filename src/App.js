@@ -1,17 +1,16 @@
 import './App.css';
-import { Header, Footer, Sidebar } from './components/Elementos';
-
-
-
+import { Sidebar } from './components/elementos/Sidebar';
+import { Header, Footer } from './components/elementos/Elementos'
+// import { useState, useEffect } from 'react';
 
 function App() {
+
+
   return (
     <div>
       <div>Hello World</div>
       <Header />
       <Sidebar />
-
-
 
       <Footer />
     </div>
