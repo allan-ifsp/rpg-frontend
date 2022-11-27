@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function CadastrarMestre() {
+export function CadastrarPersonagem() {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -16,15 +16,15 @@ export function CadastrarMestre() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "nome=" + inputs.nome + "&login=" + inputs.login + "&senha=" + inputs.senha;
-        let response = await fetch('http://localhost:9000/mestre/add', {
+        let bodyContent = "nome=" + inputs.nome + "&descricao=" + inputs.descricao +  "&status=" + inputs.status + "&idMestre=" + inputs.idMestre;
+        let response = await fetch('http://localhost:9000/personagem/add', {
             method: "POST",
             headers: headersList,
             body: bodyContent,
         }).then(response => {
             console.log(response);
             return response.json();
-        }).catch(() => console.log('falha ao cadastrar'))
+        }).catch(() => console.log(inputs))
 
         let data = await response.text();
         console.log(data);
@@ -40,19 +40,27 @@ export function CadastrarMestre() {
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Login:<br />
+            <label>Descrição:<br />
                 <input
                     type="text"
-                    name="login"
-                    value={inputs.login || ""}
+                    name="descricao"
+                    value={inputs.descricao || ""}
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Senha:<br />
+            <label>Identificador do Mestre:<br />
                 <input
-                    type="password"
-                    name="senha"
-                    value={inputs.senha || ""}
+                    type="number"
+                    name="idMestre"
+                    value={inputs.idMestre || ""}
+                    onChange={handleChange}
+                />
+            </label><br />
+            <label>Status do Personagem<br />
+                <input
+                    type="text"
+                    name="status"
+                    value={inputs.status || ""}
                     onChange={handleChange}
                 />
             </label><br />

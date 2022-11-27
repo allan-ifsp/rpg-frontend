@@ -1,36 +1,38 @@
 import { useState, useEffect } from 'react';
-import { AtualizarMestre } from './Atualizar';
+import { AtualizarCampanha } from './Atualizar';
 
 
-export function ListarMestre() {
-    const [mestres, setMestres] = useState([]);
+export function ListarCampanha() {
+    const [campanhas, setCampanhas] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9000/mestre/todos")
+        fetch("http://localhost:9000/campanha/todos")
             .then(response => response.json())
-            .then(listaMestres => {
+            .then(listaCampanhas => {
                 // console.log(listaMestres);
-                setMestres(listaMestres)
+                setCampanhas(listaCampanhas)
             })
     });
 
     return (
         <div className='lista'>
-            <h3>Listagem de mestres</h3>
+            <h3>Campanhas</h3>
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
+                        <th>Descrição</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {mestres.map((mestre, indice) => {
-                        console.log(mestre)
+                    {campanhas.map((campanha, indice) => {
+                        console.log(campanha)
                         return (
                             <tr>
-                                <td>{mestre.id}</td>
-                                <td>{mestre.nome}</td>
+                                <td>{campanha.id}</td>
+                                <td>{campanha.nome}</td>
+                                <td>{campanha.descricao}</td>
                             </tr>
                         )
                     })

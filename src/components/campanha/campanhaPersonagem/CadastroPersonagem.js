@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function CadastrarMestre() {
+export function CadastrarCampanhaPersonagem() {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -16,15 +16,15 @@ export function CadastrarMestre() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "nome=" + inputs.nome + "&login=" + inputs.login + "&senha=" + inputs.senha;
-        let response = await fetch('http://localhost:9000/mestre/add', {
+        let bodyContent = "campanhaId=" + inputs.campanhaId + "&personagemId=" + inputs.personagemId +  "&conquista=" + inputs.conquista;
+        let response = await fetch('http://localhost:9000/campanhaPersonagem/add', {
             method: "POST",
             headers: headersList,
             body: bodyContent,
         }).then(response => {
             console.log(response);
             return response.json();
-        }).catch(() => console.log('falha ao cadastrar'))
+        }).catch(() => console.log(inputs))
 
         let data = await response.text();
         console.log(data);
@@ -32,27 +32,27 @@ export function CadastrarMestre() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>Nome:<br />
+            <label>Identificador da Campanha:<br />
                 <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
+                    type="number"
+                    name="campanhaId"
+                    value={inputs.campanhaId || ""}
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Login:<br />
+            <label>Identificador do Personagem:<br />
                 <input
-                    type="text"
-                    name="login"
-                    value={inputs.login || ""}
+                    type="number"
+                    name="personagemId"
+                    value={inputs.personagemId || ""}
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Senha:<br />
+            <label>Conquista:<br />
                 <input
-                    type="password"
-                    name="senha"
-                    value={inputs.senha || ""}
+                    type="text"
+                    name="conquista"
+                    value={inputs.conquista || ""}
                     onChange={handleChange}
                 />
             </label><br />

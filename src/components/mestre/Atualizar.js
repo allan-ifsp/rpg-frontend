@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function CadastrarMestre() {
+export function AtualizarMestre() {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -12,19 +12,20 @@ export function CadastrarMestre() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         console.log(inputs);
+
         let headersList = {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
         let bodyContent = "nome=" + inputs.nome + "&login=" + inputs.login + "&senha=" + inputs.senha;
-        let response = await fetch('http://localhost:9000/mestre/add', {
-            method: "POST",
+        let response = await fetch(`http://localhost:9000/mestre/${inputs.id}`, {
+            method: "PUT",
             headers: headersList,
             body: bodyContent,
         }).then(response => {
             console.log(response);
             return response.json();
-        }).catch(() => console.log('falha ao cadastrar'))
+        })
 
         let data = await response.text();
         console.log(data);
@@ -32,6 +33,14 @@ export function CadastrarMestre() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>ID:<br />
+                <input
+                    type="number"
+                    name="id"
+                    value={inputs.id || ""}
+                    onChange={handleChange}
+                />
+            </label><br />
             <label>Nome:<br />
                 <input
                     type="text"

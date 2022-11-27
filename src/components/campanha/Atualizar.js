@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function CadastrarMestre() {
+export function AtualizarCampanha() {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
@@ -16,9 +16,9 @@ export function CadastrarMestre() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "nome=" + inputs.nome + "&login=" + inputs.login + "&senha=" + inputs.senha;
-        let response = await fetch('http://localhost:9000/mestre/add', {
-            method: "POST",
+        let bodyContent = "nome=" + inputs.nome + "&descricao=" + inputs.descricao + "&idMestre=" + inputs.idMestre;
+        let response = await fetch(`http://localhost:9000/campanha/${inputs.id}`, {
+            method: "PUT",
             headers: headersList,
             body: bodyContent,
         }).then(response => {
@@ -32,6 +32,14 @@ export function CadastrarMestre() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <label>ID:<br />
+                <input
+                    type="number"
+                    name="id"
+                    value={inputs.id || ""}
+                    onChange={handleChange}
+                />
+            </label><br />
             <label>Nome:<br />
                 <input
                     type="text"
@@ -40,19 +48,19 @@ export function CadastrarMestre() {
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Login:<br />
+            <label>Descrição:<br />
                 <input
                     type="text"
-                    name="login"
-                    value={inputs.login || ""}
+                    name="descricao"
+                    value={inputs.descricao || ""}
                     onChange={handleChange}
                 />
             </label><br />
-            <label>Senha:<br />
+            <label>Identificador do Mestre:<br />
                 <input
-                    type="password"
-                    name="senha"
-                    value={inputs.senha || ""}
+                    type="number"
+                    name="idMestre"
+                    value={inputs.idMestre || ""}
                     onChange={handleChange}
                 />
             </label><br />
