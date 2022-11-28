@@ -1,7 +1,6 @@
 import './App.css';
 import { Sidebar } from './components/elementos/Sidebar';
 import { Header, Footer } from './components/elementos/Elementos'
-// import { useState, useEffect } from 'react';
 
 function App() {
 

@@ -9,7 +9,6 @@ export function ListarCampanha() {
         fetch("http://localhost:9000/campanha/todos")
             .then(response => response.json())
             .then(listaCampanhas => {
-                // console.log(listaMestres);
                 setCampanhas(listaCampanhas)
             })
     });

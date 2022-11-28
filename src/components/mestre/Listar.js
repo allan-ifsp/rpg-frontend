@@ -9,7 +9,6 @@ export function ListarMestre() {
         fetch("http://localhost:9000/mestre/todos")
             .then(response => response.json())
             .then(listaMestres => {
-                // console.log(listaMestres);
                 setMestres(listaMestres)
             })
     });
