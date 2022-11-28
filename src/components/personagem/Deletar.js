@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export function DeletarPersonagem() {
     const [inputs, setInputs] = useState({});
@@ -31,16 +31,18 @@ export function DeletarPersonagem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>ID:<br />
-                <input
-                    type="number"
-                    name="id"
-                    value={inputs.id || ""}
-                    onChange={handleChange}
-                />
-            </label>
-            <input type="submit" value="Deletar" />
-        </form>
+        <div><h3>Deletar Personagem</h3>
+            <form onSubmit={handleSubmit}>
+                <label>ID:<br />
+                    <input
+                        type="number"
+                        name="id"
+                        value={inputs.id || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <input type="submit" value="Deletar" />
+            </form>
+        </div>
     )
 }

@@ -11,7 +11,7 @@ export function ListarCampanha() {
             .then(listaCampanhas => {
                 setCampanhas(listaCampanhas)
             })
-    });
+    }, []);
 
     return (
         <div className='lista'>

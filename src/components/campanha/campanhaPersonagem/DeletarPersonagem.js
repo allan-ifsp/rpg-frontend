@@ -16,7 +16,7 @@ export function DeletarCampanhaPersonagem() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "campanhaId=" + inputs.campanhaId + "&personagemId=" + inputs.personagemId +  "&conquista=" + inputs.conquista;
+        let bodyContent = "campanhaId=" + inputs.campanhaId + "&personagemId=" + inputs.personagemId + "&conquista=" + inputs.conquista;
         let response = await fetch(`http://localhost:9000/campanhaPersonagem/${inputs.id}`, {
             method: "DELETE",
             headers: headersList,
@@ -31,16 +31,21 @@ export function DeletarCampanhaPersonagem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>ID:<br />
-                <input
-                    type="number"
-                    name="id"
-                    value={inputs.id || ""}
-                    onChange={handleChange}
-                />
-            </label>
-            <input type="submit" value="Deletar" />
-        </form>
+        <div>
+
+            <h3>Deletar Personagem na Campanha</h3>
+
+            <form onSubmit={handleSubmit}>
+                <label>ID:<br />
+                    <input
+                        type="number"
+                        name="id"
+                        value={inputs.id || ""}
+                        onChange={handleChange}
+                    />
+                </label>
+                <input type="submit" value="Deletar" />
+            </form>
+        </div>
     )
 }

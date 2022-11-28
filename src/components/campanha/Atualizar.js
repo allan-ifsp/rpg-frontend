@@ -31,40 +31,43 @@ export function AtualizarCampanha() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>ID:<br />
-                <input
-                    type="number"
-                    name="id"
-                    value={inputs.id || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Nome:<br />
-                <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Descrição:<br />
-                <input
-                    type="text"
-                    name="descricao"
-                    value={inputs.descricao || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Identificador do Mestre:<br />
-                <input
-                    type="number"
-                    name="idMestre"
-                    value={inputs.idMestre || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Atualizar Campanha</h3>
+            <form onSubmit={handleSubmit}>
+                <label>ID:<br />
+                    <input
+                        type="number"
+                        name="id"
+                        value={inputs.id || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Nome:<br />
+                    <input
+                        type="text"
+                        name="nome"
+                        value={inputs.nome || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Descrição:<br />
+                    <input
+                        type="text"
+                        name="descricao"
+                        value={inputs.descricao || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Identificador do Mestre:<br />
+                    <input
+                        type="number"
+                        name="idMestre"
+                        value={inputs.idMestre || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }

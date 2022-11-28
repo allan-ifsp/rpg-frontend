@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AtualizarPersonagem } from './Atualizar';
 
 
 export function ListarPersonagem() {
@@ -11,7 +10,7 @@ export function ListarPersonagem() {
             .then(listapersonagens => {
                 setpersonagens(listapersonagens)
             })
-    });
+    }, []);
 
     return (
         <div className='lista'>

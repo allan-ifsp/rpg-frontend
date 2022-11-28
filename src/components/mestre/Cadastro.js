@@ -31,32 +31,35 @@ export function CadastrarMestre() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Nome:<br />
-                <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Login:<br />
-                <input
-                    type="text"
-                    name="login"
-                    value={inputs.login || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Senha:<br />
-                <input
-                    type="password"
-                    name="senha"
-                    value={inputs.senha || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Cadastrar Mestre</h3>
+            <form onSubmit={handleSubmit}>
+                <label>Nome:<br />
+                    <input
+                        type="text"
+                        name="nome"
+                        value={inputs.nome || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Login:<br />
+                    <input
+                        type="text"
+                        name="login"
+                        value={inputs.login || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Senha:<br />
+                    <input
+                        type="password"
+                        name="senha"
+                        value={inputs.senha || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }

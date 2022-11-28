@@ -10,7 +10,7 @@ export function ListarCampanhaPersonagem() {
                 console.log(listaCampanhaPersonagem);
                 setcampanhaPersonagem(listaCampanhaPersonagem)
             })
-    });
+    }, []);
 
     return (
         <div className='lista'>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export function CadastrarCampanha() {
     const [inputs, setInputs] = useState({});
@@ -31,32 +31,36 @@ export function CadastrarCampanha() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Nome:<br />
-                <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Descrição:<br />
-                <input
-                    type="text"
-                    name="descricao"
-                    value={inputs.descricao || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Identificador do Mestre:<br />
-                <input
-                    type="number"
-                    name="idMestre"
-                    value={inputs.idMestre || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Cadastrar Campanha</h3>
+
+            <form onSubmit={handleSubmit}>
+                <label>Nome:<br />
+                    <input
+                        type="text"
+                        name="nome"
+                        value={inputs.nome || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Descrição:<br />
+                    <input
+                        type="text"
+                        name="descricao"
+                        value={inputs.descricao || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Identificador do Mestre:<br />
+                    <input
+                        type="number"
+                        name="idMestre"
+                        value={inputs.idMestre || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }

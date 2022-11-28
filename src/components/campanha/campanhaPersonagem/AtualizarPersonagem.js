@@ -17,7 +17,7 @@ export function AtualizarCampanhaPersonagem() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "campanhaId=" + inputs.campanhaId + "&personagemId=" + inputs.personagemId +  "&conquista=" + inputs.conquista;
+        let bodyContent = "campanhaId=" + inputs.campanhaId + "&personagemId=" + inputs.personagemId + "&conquista=" + inputs.conquista;
         let response = await fetch(`http://localhost:9000/campanhaPersonagem/${inputs.id}`, {
             method: "PUT",
             headers: headersList,
@@ -32,40 +32,44 @@ export function AtualizarCampanhaPersonagem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>ID:<br />
-                <input
-                    type="number"
-                    name="id"
-                    value={inputs.id || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Identificador da Campanha:<br />
-                <input
-                    type="number"
-                    name="campanhaId"
-                    value={inputs.campanhaId || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Identificador do Personagem:<br />
-                <input
-                    type="number"
-                    name="personagemId"
-                    value={inputs.personagemId || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Conquista:<br />
-                <input
-                    type="text"
-                    name="conquista"
-                    value={inputs.conquista || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Atualizar Personagem na Campanha</h3>
+
+            <form onSubmit={handleSubmit}>
+                <label>ID:<br />
+                    <input
+                        type="number"
+                        name="id"
+                        value={inputs.id || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Identificador da Campanha:<br />
+                    <input
+                        type="number"
+                        name="campanhaId"
+                        value={inputs.campanhaId || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Identificador do Personagem:<br />
+                    <input
+                        type="number"
+                        name="personagemId"
+                        value={inputs.personagemId || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Conquista:<br />
+                    <input
+                        type="text"
+                        name="conquista"
+                        value={inputs.conquista || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }

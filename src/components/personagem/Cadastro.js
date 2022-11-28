@@ -16,7 +16,7 @@ export function CadastrarPersonagem() {
             "Accept": "*/*",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-        let bodyContent = "nome=" + inputs.nome + "&descricao=" + inputs.descricao +  "&status=" + inputs.status + "&idMestre=" + inputs.idMestre;
+        let bodyContent = "nome=" + inputs.nome + "&descricao=" + inputs.descricao + "&status=" + inputs.status + "&idMestre=" + inputs.idMestre;
         let response = await fetch('http://localhost:9000/personagem/add', {
             method: "POST",
             headers: headersList,
@@ -31,40 +31,44 @@ export function CadastrarPersonagem() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Nome:<br />
-                <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Descrição:<br />
-                <input
-                    type="text"
-                    name="descricao"
-                    value={inputs.descricao || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Identificador do Mestre:<br />
-                <input
-                    type="number"
-                    name="idMestre"
-                    value={inputs.idMestre || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Status do Personagem<br />
-                <input
-                    type="text"
-                    name="status"
-                    value={inputs.status || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Cadastrar Personagem</h3>
+
+            <form onSubmit={handleSubmit}>
+                <label>Nome:<br />
+                    <input
+                        type="text"
+                        name="nome"
+                        value={inputs.nome || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Descrição:<br />
+                    <input
+                        type="text"
+                        name="descricao"
+                        value={inputs.descricao || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Identificador do Mestre:<br />
+                    <input
+                        type="number"
+                        name="idMestre"
+                        value={inputs.idMestre || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Status do Personagem<br />
+                    <input
+                        type="text"
+                        name="status"
+                        value={inputs.status || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }

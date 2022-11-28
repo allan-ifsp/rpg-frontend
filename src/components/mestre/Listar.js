@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AtualizarMestre } from './Atualizar';
-
 
 export function ListarMestre() {
     const [mestres, setMestres] = useState([]);
@@ -11,7 +9,7 @@ export function ListarMestre() {
             .then(listaMestres => {
                 setMestres(listaMestres)
             })
-    });
+    }, []);
 
     return (
         <div className='lista'>

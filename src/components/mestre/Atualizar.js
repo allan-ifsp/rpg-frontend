@@ -32,40 +32,43 @@ export function AtualizarMestre() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>ID:<br />
-                <input
-                    type="number"
-                    name="id"
-                    value={inputs.id || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Nome:<br />
-                <input
-                    type="text"
-                    name="nome"
-                    value={inputs.nome || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Login:<br />
-                <input
-                    type="text"
-                    name="login"
-                    value={inputs.login || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <label>Senha:<br />
-                <input
-                    type="password"
-                    name="senha"
-                    value={inputs.senha || ""}
-                    onChange={handleChange}
-                />
-            </label><br />
-            <input type="submit" value="Enviar" />
-        </form>
+        <div>
+            <h3>Atualizar Mestre</h3>
+            <form onSubmit={handleSubmit}>
+                <label>ID:<br />
+                    <input
+                        type="number"
+                        name="id"
+                        value={inputs.id || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Nome:<br />
+                    <input
+                        type="text"
+                        name="nome"
+                        value={inputs.nome || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Login:<br />
+                    <input
+                        type="text"
+                        name="login"
+                        value={inputs.login || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <label>Senha:<br />
+                    <input
+                        type="password"
+                        name="senha"
+                        value={inputs.senha || ""}
+                        onChange={handleChange}
+                    />
+                </label><br />
+                <input type="submit" value="Enviar" />
+            </form>
+        </div>
     )
 }
